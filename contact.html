@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="exMarker-evaluate exRNA biomarker for liquid biopsy" />
+    <meta name="author" content="shang_zhang@foxmail.com" />
+
+    <title class="page-header">exPanel-Evaluate and Optimize Panels for Liquid Biopsy </title>
+    <link rel="icon" href="./exmarker/img/exmarker_icon_red.svg" sizes="32x32" />
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.css" rel="stylesheet" />
+
+    <!-- ExMarker styles -->
+    <link rel="stylesheet" href="./exmarker/css/exmarker.css" />
+
+    <!-- this CSS style is wholely for Map section, copy from http://lulab.life.tsinghua.edu.cn/map.html @ 27 machine /home/www/wwwroot/ncrnalab/map.html -->
+    <style>
+      html,
+      body,
+      #container {
+        height: 100%;
+        width: 100%;
+      }
+
+      .custom-input-card {
+        width: 18rem;
+      }
+      .amap-info-content {
+        border: 1px #bbb4b4 solid;
+        padding: 0px 0px 10px 0px;
+        border-radius: 8px;
+      }
+      .lulab_head {
+        color: #cc5522;
+        font-size: 14px;
+        font-weight: bold;
+        overflow: hidden;
+        padding-right: 13px;
+        white-space: nowrap;
+      }
+      .lulab_txt {
+        font: 12px arial, sans-serif;
+        overflow: visible;
+        padding-top: 4px;
+        white-space: -moz-pre-wrap;
+        word-wrap: break-word;
+      }
+
+      .custom-input-card .btn:last-child {
+        margin-left: 1rem;
+      }
+
+      .content-window-card {
+        position: relative;
+        width: 23rem;
+        padding: 0.75rem 0 0 1.25rem;
+        box-shadow: none;
+        bottom: 0;
+        left: 0;
+      }
+
+      .content-window-card p {
+        height: 2rem;
+      }
+    </style>
+  </head>
+
+  <body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+      <div id='nav'></div>
+
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+          <!-- Topbar -->
+          <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <!-- Sidebar Toggle (Topbar) -->
+            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle">
+              <i class="fa fa-bars"></i>
+            </button>
+
+            <!-- Topbar Search -->
+            <!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+              <div class="input-group">
+                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-primary" type="button">
+                    <i class="fas fa-search fa-sm"></i>
+                  </button>
+                </div>
+              </div>
+            </form> -->
+            <div>
+              <h1 class="h3 text-gray-900 alert-link text-capitalize interactive_title">Contact</h1>
+            </div>
+
+            <!-- 一个检查mobil friendly的小工具，有点画蛇添足 -->
+            <!-- <div class="img-thumbnail float-right">
+              <a target="_blank" href="https://www.google.com/webmasters/tools/mobile-friendly/?url=exmarker.zhangshang.online"><img class="float-right img-responsive" height="30rem" src="./exmarker/img/mobile_friendly4.svg"></a>
+            </div> -->
+          </nav>
+          <!-- End of Topbar -->
+
+          <!-- Begin Page Content -->
+          <div class="container-fluid">
+            <!-- Page Heading -->
+            <!-- <h1 class="h3 mb-4 text-gray-900 alert-link text-capitalize">Contact</h1> -->
+
+            <div class="row">
+              <div class="col-lg-6">
+                <!-- Lab homepage Cards -->
+                <div class="card shadow mb-4">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary text-capitalize">Lab homepage</h6>
+                  </div>
+                  <div class="card-body text-justify">
+                    <p>MOE Key Lab of Bioinformatics <br />School of Life Sciences, Tsinghua University</p>
+                    <a target="_blank" href="https://www.ncrnalab.org/home/" class="btn btn-primary btn-icon-split">
+                      <span class="icon text-white-50">
+                        <i class="fas fa-house-user"></i>
+                      </span>
+                      <span class="text text-capitalize">View homepage</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Address Cards -->
+                <div class="card shadow mb-4">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary text-capitalize">Addresss</h6>
+                  </div>
+                  <div class="card-body">
+                    <p
+                      >Biotech. Building, School of Life Sciences,<br />
+                      Tsinghua University, Beijing 100084, P.R.China</p
+                    >
+                  </div>
+                </div>
+
+                <!-- Contact Information Cards -->
+                <div class="card shadow mb-4">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary text-capitalize">Contact information</h6>
+                  </div>
+                  <div class="card-body">
+                    <p class="text-muted">
+                      Tel: <a href="tel:10086">+86-10-62789217</a><br />
+                      Fax: <a href="tel:10086">+86-10-62789217</a><br />
+                      Email: <a href="mailto:server_lulab@163.com">server_lulab@163.com</a><br />
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="card shadow mb-4">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Map</h6>
+                  </div>
+                  <div class="card-body">
+                    <div style="width: 100%; height: 490px;" id="mapContainer" tabindex="0"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span
+                >Copyright &copy;
+                <a target="_blank" href="http://bioinformatics.life.tsinghua.edu.cn">Lu Lab @ Tsinghua University</a>
+                2020 All rights reserved</span
+              >
+            </div>
+          </div>
+        </footer>
+        <!-- End of Footer -->
+      </div>
+      <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- 含有zhangshang的key -->
+    <script src="https://webapi.amap.com/maps?v=1.4.15&key=c2cdd3a1626cdcbe242d3d6c1ee69c4b&callback=init"></script>
+
+    <script type="text/javascript">
+      var infoWindow;
+      var map = new AMap.Map('mapContainer', {
+        resizeEnable: true,
+        center: [116.315901, 40.00484],
+        zoom: 17,
+      });
+
+      //在指定位置打开信息窗体
+      function openInfo() {
+        //构建信息窗体中显示的内容
+        var info = [];
+        info.push("<div class='input-card content-window-card'><div></div> ");
+        info.push('<div style="padding:0px 0px 0px 0px;"><h6 class="lulab_head">Lu Lab @ Tsinghua University</h6>');
+        info.push("<p class='input-item lulab_txt'>Addr.: Biotech. Building, School of Life Sciences <br>Room: 2-108, 2-110, 2-111, 3-106, 3-109.<br>Tel.: 010-62789217</p></div></div>");
+        info.push('</div></div>');
+        // info.push("<p class='input-item lulab_txt'>  </p></div></div>");
+
+        infoWindow = new AMap.InfoWindow({
+          content: info.join(''), //使用默认信息窗体框样式，显示信息内容
+        });
+
+        infoWindow.open(map, map.getCenter());
+      }
+      javascript: openInfo();
+    </script>
+    <!-- js for add nav -->
+    <script>
+      $('#nav').load('side.html');
+    </script>
+  </body>
+</html>

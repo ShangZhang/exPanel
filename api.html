@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="exMarker-evaluate exRNA biomarker for liquid biopsy" />
+    <meta name="author" content="shang_zhang@foxmail.com" />
+
+    <title class="page-header">exPanel-Evaluate and Optimize Panels for Liquid Biopsy </title>
+    <link rel="icon" href="./exmarker/img/exmarker_icon_red.svg" sizes="32x32" />
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.css" rel="stylesheet" />
+
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
+
+    <!-- ExMarker styles -->
+    <link rel="stylesheet" href="./exmarker/css/exmarker.css" />
+  </head>
+
+  <body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+      <div id='nav'></div>
+
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+          <!-- Topbar -->
+          <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <!-- Sidebar Toggle (Topbar) -->
+            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle">
+              <i class="fa fa-bars"></i>
+            </button>
+
+            <div>
+              <h1 class="h3 text-gray-900 alert-link text-capitalize interactive_title">API</h1>
+            </div>
+          </nav>
+          <!-- End of Topbar -->
+
+          <!-- Begin Page Content -->
+          <div class="container-fluid">
+            <!-- Page Heading -->
+            <!-- <h1 class="h3 mb-4 text-gray-900 alert-link text-capitalize">API</h1> -->
+            <div class="text-capitalize px-3">
+              <!-- <div> <h4 class="font-weight-bold" style="margin-bottom: 0px;">Table of Contents</h4> </div> -->
+              <!--panel-heading-->
+              <ul>
+                <li>
+                  <h6><a class="font-weight-bold" href="#overview">Overview of ExMarker API</a></h6></li
+                >
+                <li
+                  ><h6><a class="font-weight-bold" href="#api_content">ExMarker API Content</a></h6></li
+                >
+              </ul>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-12">
+                <!-- Overview of exMarker Cards -->
+                <div class="card shadow mb-4" id="overview">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary text-capitalize">Overview of exMarker api</h6>
+                  </div>
+                  <div class="card-body text-justify">
+                    <p>ExMarker provides JSON-based web service APIs for fetching bulk results. You can use the APIs by any language that can handle HTTP request and response. </p>
+                  </div>
+                </div>
+
+                <!-- Web browser compatibility Cards -->
+                <div class="card shadow mb-4" id="api_content">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary text-capitalize">ExMarker API Content</h6>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-bordered small" id="web-browser-compatibility" width="100%" cellspacing="0">
+                        <thead>
+                          <tr>
+                            <td>Name</td>
+                            <td>URL</td>
+                            <td>Content</td>
+                            <td>HTTP Method</td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Browse DNA results</td>
+                            <td>http://exmarker.zhangshang.online/exmarker/php/browse_dna.php</td>
+                            <td>JSON contents of the Browse DNA marker results</td>
+                            <td>GET</td>
+                          </tr>
+                          <tr>
+                            <td>Browse RNA results</td>
+                            <td>http://exmarker.zhangshang.online/exmarker/php/browse_rna.php</td>
+                            <td>JSON contents of the Browse RNA marker results</td>
+                            <td>GET</td>
+                          </tr>
+                          <tr>
+                            <td>Browse Protein results</td>
+                            <td>http://exmarker.zhangshang.online/exmarker/php/browse_protein.php</td>
+                            <td>JSON content of the Browse Protein marker results</td>
+                            <td>GET</td>
+                          </tr>
+                          <tr>
+                            <td>Browse Metabolite results</td>
+                            <td>http://exmarker.zhangshang.online/exmarker/php/browse_metabolite.php</td>
+                            <td>JSON content of the Browse Protein marker results</td>
+                            <td>GET</td>
+                          </tr>
+                          <tr>
+                            <td>Browse Panel based marker results</td>
+                            <td>http://exmarker.zhangshang.online/exmarker/php/browse_panel.php</td>
+                            <td>JSON content of the Browse Panel based marker results</td>
+                            <td>GET</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span
+                >Copyright &copy;
+                <a target="_blank" href="http://bioinformatics.life.tsinghua.edu.cn">Lu Lab @ Tsinghua University</a>
+                2020 All rights reserved</span
+              >
+            </div>
+          </div>
+        </footer>
+        <!-- End of Footer -->
+      </div>
+      <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Call the dataTables jQuery plugin -->
+    <script>
+      $(document).ready(function () {
+        $('#web-browser-compatibility').DataTable({
+          bInfo: false,
+          bFilter: false,
+          bJQueryUI: false,
+          bAutoWidth: true,
+          bLengthChange: false,
+          paging: false,
+          ordering: false,
+          stripeClasses: ['strip1', 'strip2'],
+        });
+      });
+    </script>
+    <!-- js for add nav -->
+    <script>
+      $('#nav').load('side.html');
+    </script>
+  </body>
+</html>

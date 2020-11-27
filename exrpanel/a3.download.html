@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>exRpanel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+  
+    <!-- Insert this line above script imports  -->
+    <script type="text/javascript">
+      if (typeof module === 'object') {
+        window.module = module; 
+        module = undefined;
+      }
+    </script>
+  
+    <script src="dataset-iris/dist/ml-dataset-iris.min.js"></script>
+    <script src="ploty/plotly-190419.min.js"></script>
+  
+    <script src="jquery/1.12.4/jquery.min.js"></script>
+  
+    <script src="datatable/jquery.dataTables.js"></script>
+    <script src="datatable/dataTables.buttons.min.js"></script>
+    <script src="datatable/buttons.flash.min.js"></script>
+    <script src="datatable/jszip.min.js"></script>
+    <script src="datatable/pdfmake.min.js"></script>
+    <script src="datatable/vfs_fonts.js"></script>
+    <script src="datatable/buttons.html5.min.js"></script>
+    <script src="datatable/buttons.print.min.js"></script>
+    
+    <link  href="datatable/jquery.dataTables.css" rel="stylesheet">
+    <link  href="datatable/buttons.dataTables.min.css" rel="stylesheet">
+    
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link  href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <script src="ml/js-regression.min.js"></script>
+    <script src="ml/ml.min.js"></script>
+    <script src="ml/ml-logistic-regression.min.js"></script>
+    <script src="ml/js-datasets-iris.min.js"></script>
+  
+    <script src="ml/math.js"></script>
+  
+    <link href="css/exrpanel.css" rel="stylesheet">
+  
+    <!-- Insert this line after script imports -->
+    <script type="text/javascript">
+      if (window.module)
+        module = window.module;
+    </script>   
+  </head>
+
+<body>
+  <div class="container">
+    <div class="EBD_title">
+      <div class="row" >
+        <div  style="padding-top: 20px;">
+          <h2>exRpanel<span style="color:#000000"> for Liquid Biopsy</span></h2>
+        </div>
+      </div>
+    </div>
+
+    <nav id="EBD_nav" class="navbar navbar-default container-fluid" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="example-navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="dropdown"><a href="./index.html">Home</a></li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> Start Analysis <b class="caret"></b></a>
+            <ul class="dropdown-menu" style="font-size:20px;">
+              <li><a href="a1.server.html" >Using server matrix</a></li>
+              <li><a href="a2.user.html" >Using customized matrix</a></li>
+            </ul>
+          </li>
+          <li class="active" id="nav_trl"><a href="a3.download.html">Download</a></li>
+          <li class="dropdown" id="nav_help"><a href="a4.help.html">Help</a></li>
+          <li class="dropdown" id="nav_contact"><a href="a5.contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="row" style="margin: 10px 0;">
+      <div id="downloadlist" class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title" style="margin: 0;;color:#337ab7;">Download</h4>
+        </div>
+        <div class="panel-body">
+          <br>
+          <div class="panel panel-primary">
+              <div class="panel panel-body">
+              <table class="table ">
+                <tbody>
+                  <tr>
+                    <td><strong>Description</strong></td>
+                    <td><strong>Download</strong></td>
+                  </tr>
+                  <tr>
+                    <td>exoRBase</td>
+                      <td>
+                        <span style="width:13vh" type="button" class="btn btn-default btn-sm" ">
+                          <a target="_blank" href="http://www.exorbase.org/exoRBase/download/toIndex">
+                            <img id="workflow" src="image/links.svg" style="width:20%;" alt="Work flow"> Download
+                          </a>
+                        </span>
+                      </td>
+                  </tr>
+                    <tr>
+                      <td>GSE122488 </td>
+                      <td>
+                        <span  style="width:13vh"  type="button" class="btn btn-default btn-sm" ">
+                          <a target="_blank" href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE122488">
+                            <img id="workflow" src="image/links.svg" style="width:20%;" alt="Work flow"> Download
+                          </a>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>GSE123972 </td>
+                      <td>
+                        <span style="width:13vh"  type="button" class="btn btn-default btn-sm">
+                          <a target="_blank" href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE123972">
+                            <img id="workflow" src="image/links.svg" style="width:20%;" alt="Work flow"> Download
+                          </a>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>GSE59418 </td>
+                      <td>
+                        <span style="width:13vh"  type="button" class="btn btn-default btn-sm" ">
+                          <a target="_blank" href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE59418">
+                            <img id="workflow" src="image/links.svg" style="width:20%;" alt="Work flow"> Download
+                          </a>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>GSE71008_scirep </td>
+                        <td>
+                          <span style="width:13vh"  type="button" class="btn btn-default btn-sm" ">
+                            <a target="_blank" href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE71008">
+                              <img id="workflow" src="image/links.svg" style="width:20%;" alt="Work flow"> Download
+                            </a>
+                          </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>PRJEB1712 </td>
+                        <td>
+                          <span style="width:13vh"  type="button" class="btn btn-default btn-sm" ">
+                            <a target="_blank" href="https://www.ncbi.nlm.nih.gov/bioproject/195523#">
+                              <img id="workflow" src="image/links.svg" style="width:20%;" alt="Work flow"> Download
+                            </a>
+                          </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>PRJNA540919 </td>
+                      <td>
+                        <span style="width:13vh"  type="button" class="btn btn-default btn-sm" ">
+                          <a target="_blank" href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA540919/">
+                            <img id="workflow" src="image/links.svg" style="width:20%;" alt="Work flow"> Download
+                          </a>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>SRP061372 </td>
+                      <td>
+                        <span  style="width:13vh"  type="button" class="btn btn-default btn-sm" ">
+                          <a target="_blank" href="https://trace.ddbj.nig.ac.jp/DRASearch/study?acc=SRP061372">
+                            <img id="workflow" src="image/links.svg" style="width:20%;" alt="Work flow"> Download
+                          </a>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>SRP130149 </td>
+                      <td>
+                        <span style="width:13vh"  type="button" class="btn btn-default btn-sm" ">
+                          <a target="_blank" href="https://trace.ddbj.nig.ac.jp/DRASearch/study?acc=SRP130149">
+                            <img id="workflow" src="image/links.svg" style="width:20%;" alt="Work flow"> Download
+                          </a>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>GSE114711 </td>
+                      <td>
+                        <span  style="width:13vh"  type="button" class="btn btn-default btn-sm" ">
+                          <a target="_blank" href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE114711">
+                            <img id="workflow" src="image/links.svg" style="width:20%;" alt="Work flow"> Download
+                          </a>
+                        </span>
+                      </td>
+                  </tr>                                  
+                  </tbody>
+              </table><!--table -->
+              </div><!--panel panel-body-->
+            </div><!--panel panel-primary-->
+          </div><!--panel-body-->
+                        
+          </div><!--panel-body-->
+    </div><!--row -->
+  </div><!---container--->
+
+  <footer>
+    <hr>
+    <p style="text-align: center;">exRpanel for Liquid Biopsy Copyright © 2020  <a href="http://bioinformatics.life.tsinghua.edu.cn">Lu Lab @ Tsinghua University</a> All right reserved</p>
+  </footer>
+
+</body><!---body-->
+</html>

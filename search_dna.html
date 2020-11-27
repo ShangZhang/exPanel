@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="exMarker-evaluate exRNA biomarker for liquid biopsy" />
+    <meta name="author" content="shang_zhang@foxmail.com" />
+
+    <title class="page-header">exPanel-Evaluate and Optimize Panels for Liquid Biopsy </title>
+    <link rel="icon" href="./exmarker/img/exmarker_icon_red.svg" sizes="32x32" />
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.css" rel="stylesheet" />
+
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
+
+    <!-- ExMarker styles -->
+    <link rel="stylesheet" href="./exmarker/css/exmarker.css" />
+  </head>
+
+  <body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+      <div id="nav"></div>
+
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+          <!-- Topbar -->
+          <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <!-- Sidebar Toggle (Topbar) -->
+            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle">
+              <i class="fa fa-bars"></i>
+            </button>
+
+            <!-- Topbar Search -->
+            <!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+              <div class="input-group">
+                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-primary" type="button">
+                    <i class="fas fa-search fa-sm"></i>
+                  </button>
+                </div>
+              </div>
+            </form> -->
+            <div>
+              <h1 class="h3 text-gray-900 alert-link text-capitalize interactive_title">Evaluate DNA Markers</h1>
+            </div>
+          </nav>
+          <!-- End of Topbar -->
+
+          <!-- Begin Page Content -->
+          <div class="container-fluid" style="height: 90%">
+            <!-- exMarker search section  style="display: none;"-->
+            <div id="box_input" class="exmarker_search_box_container">
+              <div id="select_input_zs" class="row text-center exmarker_search_box">
+                <div class="exmarker_search_tips">
+                  <b class="font-italic dt">Tips: </b><i class="fa fa-hand-point-right"></i>
+                  <p> Search a <span class="exmarker_underline_italic">DNA biomarker</span> by entering a gene symbol [e.g. BRCA1, TP53, KRAS].</p>
+                </div>
+
+                <div class="exmarker_search_item text-center">
+                  <h5>
+                    Marker name
+                    <a href="./help.html#input_description" target="_blank" data-toggle="tooltip" title="Click to jump to the page of input description"><i class="fa fa-question-circle"></i></a>:
+                  </h5>
+                  <div class="exmarker_search_div_for_form">
+                    <form>
+                      <input type="text" id="select_gene_name" value="KRAS" autocomplete="off" spellcheck="false" placeholder="KRAS" class="exmarker_search_form_input" />
+                    </form>
+                  </div>
+                </div>
+
+                <div style="width: 80%; margin: 0 auto">
+                  <div class="col-md-12 col-xs-12">
+                    <button class="btn-outline-primary" onclick="search()">Search a DNA biomarker</button>
+                  </div>
+                </div>
+
+                <div class="col-md-12 col-xs-12">
+                  <img class="img-responsive sample_stat_img" src="./exmarker/img/search_dna_markers_summary.png" alt="EBA summary img" />
+                </div>
+              </div>
+            </div>
+            <!-- end of exMarker search section -->
+
+            <!-- exMarker loader section -->
+            <div class="text-center" id="loader_box" style="display: none">
+              <i class="fa fa-cog fa-spin fa-5x fa-fw"></i>
+              <span class="sr-only">Loading...</span>
+            </div>
+            <!-- end of exMarker search section -->
+
+            <!---exMarker result section -->
+            <div id="box_result" class="exmarker_results_container" style="display: none">
+              <div class="card">
+                <div class="card-header">
+                  <h4><a class="card-link" data-toggle="collapse" href="#collapse-6">Evidence level</a></h4>
+                </div>
+                <div id="collapse-6" class="collapse show">
+                  <div class="card-body">
+                    <div id="dna_evidence_level" class="exmarker_biomarkerDiv_for_table"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <h4><a class="card-link" data-toggle="collapse" href="#collapse-1">Biomarker reports</a></h4>
+                </div>
+                <div id="collapse-1" class="collapse show">
+                  <div class="card-body">
+                    <div id="dna_biomarker_report"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <h4><a class="card-link" data-toggle="collapse" href="#collapse-4">FDA approval</a></h4>
+                </div>
+                <div id="collapse-4" class="collapse show">
+                  <div class="card-body">
+                    <div id="dna_fda_approval"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <h4
+                    ><a class="card-link" data-toggle="collapse" href="#collapse-5">Drug related biomarkers&nbsp;</a><a href="https://www.oncokb.org/" target="_blank" data-toggle="tooltip" title="https://www.oncokb.org/"><i class="fa fa-link" aria-hidden="true"></i></a
+                  ></h4>
+                </div>
+                <div id="collapse-5" class="collapse show">
+                  <div class="card-body">
+                    <div id="dna_oncokb" class="exmarker_biomarkerDiv_for_table"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span
+                >Copyright &copy;
+                <a target="_blank" href="http://bioinformatics.life.tsinghua.edu.cn">Lu Lab @ Tsinghua University</a>
+                2020 All rights reserved</span
+              >
+            </div>
+          </div>
+        </footer>
+        <!-- End of Footer -->
+      </div>
+      <!-- End of Content Wrapper -->
+      <!-- </div> -->
+      <!-- End of Page Wrapper -->
+
+      <!-- Scroll to Top Button-->
+      <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+      </a>
+
+      <!-- Bootstrap core JavaScript-->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+      <!-- Core plugin JavaScript-->
+      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+      <!-- Custom scripts for all pages-->
+      <script src="js/sb-admin-2.min.js"></script>
+
+      <!-- Page level plugins -->
+      <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+      <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+      <!-- the following three are used for typeahead -->
+      <script src="exmarker/Bootstrap-3-Typeahead-master/bootstrap3-typeahead.min.js"></script>
+
+      <script>
+        dna_evidence_level_content = '';
+        function dna_evidence_level(RNA_name) {
+          var content = $.ajax({
+            type: 'GET',
+            dataType: 'json',
+            url: './exmarker/php/dna_evidence_level.php',
+            data: 'RNA_name=' + RNA_name,
+            error: function (jqXHR, textStatus, errorThrown) {
+              console.log('jqXHR:' + jqXHR + '\ntextStatus:' + textStatus + '\nerrorThrown:' + errorThrown);
+            },
+            success: function (response) {
+              data_response = response;
+              if (response.length !== 0) {
+                dna_evidence_level_content += '<table id="browse_rna_table" class="table table-striped table-hover" style="width:100%">';
+                dna_evidence_level_content += '<thead class="thead-light"><tr><th>Gene Symbol</th><th>Disease Type</th><th>Evidence Level</th></tr></thead>';
+                dna_evidence_level_content += '<body>';
+                for (var i = 0; i < response.length; i++) {
+                  dna_evidence_level_content += '<tr><td>' + data_response[i][2] + '</td><td>' + data_response[i][3] + '</td><td>' + data_response[i][4] + '</td></tr>';
+                }
+                dna_evidence_level_content += '</body></table>';
+                document.getElementById('dna_evidence_level').innerHTML = dna_evidence_level_content;
+                $('#browse_rna_table').DataTable({
+                  autoWidth: true,
+                  scrollX: true,
+                  scrollY: true,
+                  // columnDefs: [{ width: '10%', targets: 0 }],
+
+                  bSort: false,
+                  info: false,
+                  paging: false,
+                  searching: false,
+                });
+              }
+              console.log(response);
+              return response;
+            },
+          });
+          return content;
+        }
+
+        dna_biomarker_report_content = '';
+        function dna_biomarker_report(gene_name) {
+          var content = $.ajax({
+            type: 'GET',
+            dataType: 'json',
+            url: 'exmarker/php/dna_biomarker_report.php',
+            data: 'gene_name=' + gene_name,
+            error: function (jqXHR, textStatus, errorThrown) {
+              console.log('jqXHR:' + jqXHR + '\ntextStatus:' + textStatus + '\nerrorThrown:' + errorThrown);
+            },
+            success: function (response) {
+              data_response = response;
+              if (response.length !== 0) {
+                for (var i = 0; i < data_response.length; i++) {
+                  dna_biomarker_report_content += '<div class="exmarker_biomarkerDiv_for_table">';
+                  dna_biomarker_report_content += '<table class="table table-striped table-hover" style="width:100%"><tbody>';
+
+                  dna_biomarker_report_content += '<tr><td colspan="2"><b>Reference: </b><a class="link_pmid_reference" target="_blank" href=https://pubmed.ncbi.nlm.nih.gov/' + response[i][22] + '/>' + response[i][19] + '</a></td></tr>';
+                  dna_biomarker_report_content += '<tr><td width="40%"><b>Biomarker_Name: </b>' + response[i][2] + '</td><td><b>Marker_Type: </b>' + response[i][3] + '</td></tr>';
+                  dna_biomarker_report_content += '<tr><td width="40%"><b>Clinical_Value: </b>diagnosis</td><td><b>Early_Stage: </b>Y</td></tr>';
+                  dna_biomarker_report_content += '<tr><td width="40%"><b>Discrimination: </b>' + response[i][6] + '</td><td><b>Variation_Trend: </b>' + response[i][7] + '</td></tr>';
+                  dna_biomarker_report_content += '<tr><td width="40%"><b>Specimen: </b>' + response[i][5] + '</td><td><b>Sample_Size: </b>' + response[i][11] + '</td></tr>';
+                  dna_biomarker_report_content += '<tr><td width="40%"><b>Method: </b>' + response[i][13] + '</td><td><b>Single/Panel: </b>' + response[i][15] + '</td></tr>';
+                  dna_biomarker_report_content += '<tr><td width="40%"><b>Sensitivity(%): </b>' + response[i][16] + '</td><td><b>Specificity(%): </b>' + response[i][17] + '</td></tr>';
+                  dna_biomarker_report_content += '<tr><td width="40%"><b>AUC: </b>' + response[i][18] + '</td><td><b>Disease_Type: </b>' + response[i][25] + '</td></tr>';
+                  dna_biomarker_report_content += '<tr><td width="40%"><b>Region: </b>' + response[i][14] + '</td><td><b>PMID: </b><a class="link_pmid_reference" target="_blank" href=https://pubmed.ncbi.nlm.nih.gov/' + response[i][22] + '/>' + response[i][22] + '</a></td></tr>';
+                  dna_biomarker_report_content += '<tr><td width="40%"><b>Publish_Year: </b>' + response[i][23] + '</td><td><b>Journal: </b>' + response[i][20] + '</td></tr>';
+                  dna_biomarker_report_content += '<tr><td colspan="2"><b>Biomarker_Summary: </b>' + response[i][10] + '</td></tr>';
+
+                  dna_biomarker_report_content += '</tbody></table>';
+                  dna_biomarker_report_content += '</div>';
+                }
+
+                document.getElementById('dna_biomarker_report').innerHTML = dna_biomarker_report_content;
+                // $('#example2').DataTable();
+                document.getElementById('loader_box').style.display = 'none';
+                document.getElementById('box_result').style.display = 'block';
+              }
+
+              console.log(data_response.length);
+
+              if (data_response.length == 0) {
+                $('#dna_biomarker_report').html('No biomarker reported collected in exMarker.');
+              }
+              return data_response;
+            },
+          });
+          return content;
+        }
+
+        dna_fda_approval_content = '';
+        function dna_fda_approval(gene_name) {
+          var content = $.ajax({
+            type: 'GET',
+            dataType: 'json',
+            url: 'exmarker/php/dna_fda_approval.php',
+            data: 'gene_name=' + gene_name,
+            error: function (jqXHR, textStatus, errorThrown) {
+              console.log('jqXHR:' + jqXHR + '\ntextStatus:' + textStatus + '\nerrorThrown:' + errorThrown);
+            },
+            success: function (response) {
+              data_response = response;
+              if (response.length !== 0) {
+                for (var i = 0; i < data_response.length; i++) {
+                  dna_fda_approval_content += '<div class="exmarker_biomarkerDiv_for_table">';
+                  dna_fda_approval_content += '<table class="table table-striped table-hover" style="width:100%"><tbody>';
+
+                  dna_fda_approval_content += '<tr><td width="40%"><b>Gene_Symbol: </b>' + response[i][1] + '</td><td><b>Marker_Name: </b>' + response[i][3] + '</td></tr>';
+                  dna_fda_approval_content += '<tr><td width="40%"><b>Marker_Name: </b>' + response[i][7] + '</td><td><b>Marker_Type: </b>' + response[i][4] + '</td></tr>';
+                  dna_fda_approval_content += '<tr><td width="40%"><b>Marker_Name: </b>' + response[i][6] + '</td><td><b>Class: </b>' + response[i][10] + '</td></tr>';
+                  dna_fda_approval_content += '<tr><td width="40%"><b>Submission_ID: </b>' + response[i][9] + '</td><td><b>Year_First_Approved: </b>' + response[i][11] + '</td></tr>';
+                  dna_fda_approval_content += '<tr><td width="40%"><b>Cancer_Type: </b>' + response[i][5] + '</td><td><b>Evidence_Level: </b>' + response[i][12] + '</td></tr>';
+                  dna_fda_approval_content += '<tr><td colspan="2"><b>Biomarker_Usage: </b>' + response[i][8] + '</td></tr>';
+
+                  dna_fda_approval_content += '</tbody></table>';
+                  dna_fda_approval_content += '</div>';
+                }
+
+                document.getElementById('dna_fda_approval').innerHTML = dna_fda_approval_content;
+              }
+
+              console.log(data_response.length);
+
+              if (data_response.length == 0) {
+                $('#dna_fda_approval').html('No FDA approvaled biomarker collected.');
+              }
+              return data_response;
+            },
+          });
+          return content;
+        }
+
+        dna_oncokb_content = '';
+        function dna_oncokb(gene_name) {
+          var content = $.ajax({
+            type: 'GET',
+            dataType: 'json',
+            url: 'exmarker/php/dna_oncokb.php',
+            data: 'gene_name=' + gene_name,
+            error: function (jqXHR, textStatus, errorThrown) {
+              console.log('jqXHR:' + jqXHR + '\ntextStatus:' + textStatus + '\nerrorThrown:' + errorThrown);
+            },
+            success: function (response) {
+              data_response = response;
+              if (response.length !== 0) {
+                dna_oncokb_content += '<table id="dna_oncokb_table" class="table table-striped table-hover" style="width:100%">';
+                dna_oncokb_content += '<thead class="thead-light"><tr><th>Gene Symbol</th><th>Alteration</th><th>Tumor Type</th><th>Drugs</th><th>Evidence Level</th></tr></thead>';
+                dna_oncokb_content += '<body>';
+
+                for (var i = 0; i < data_response.length; i++) {
+                  dna_oncokb_content += '<tr><td>' + data_response[i][1] + '</td><td>' + data_response[i][2] + '</td><td>' + data_response[i][3] + '</td><td>' + data_response[i][4] + '</td><td>' + data_response[i][5] + '</td>';
+                  dna_oncokb_content += '</tr>';
+                }
+
+                document.getElementById('dna_oncokb').innerHTML = dna_oncokb_content;
+                $('#dna_oncokb_table').DataTable({
+                  autoWidth: true,
+                  scrollX: true,
+                  scrollY: true,
+                  // columnDefs: [{ width: '10%', targets: 0 }],
+
+                  bSort: false,
+                  info: false,
+                  paging: false,
+                  searching: false,
+                });
+              }
+
+              console.log(data_response.length);
+
+              if (data_response.length == 0) {
+                $('#dna_oncokb').html('No drug assiocited biomarker from OncoKB collected.');
+              }
+              return data_response;
+            },
+          });
+          return content;
+        }
+
+        // typeahead 和 ajax 技术结合，实现动态查询
+        let name_content_list = [];
+        $(document).ready(
+          // 页面加载后自动运行
+          function () {
+            var content = $.ajax({
+              // ajax获取数据表中的HGNC_Symbol列中的内容，最终形成的是一个没有重复项的js数组
+              type: 'GET',
+              dataType: 'json',
+              url: 'exmarker/php/typeahead/typeahead_search_dna_markers.php',
+              success: function (response) {
+                if (response.length !== 0) {
+                  for (var i = 0; i < response.length; i++) {
+                    // console.log(response[i][1]);
+                    name_content_list.push(response[i][0]);
+                  }
+                  name_content_list = unique(name_content_list); // 调用函数去重复
+                }
+                console.log(name_content_list);
+                // 调用typeahead实现自动填充
+                $('#select_gene_name').typeahead({
+                  source: name_content_list,
+                });
+              },
+            });
+          }
+        );
+
+        // typeahead用，用于将获取的列表去重复的函数
+        function unique(arr) {
+          let hash = [];
+          for (let i = 0; i < arr.length; i++) {
+            if (arr.indexOf(arr[i]) === i) {
+              hash.push(arr[i]);
+            }
+          }
+          return hash;
+        }
+
+        function search() {
+          document.getElementById('loader_box').style.display = 'block';
+          gene_name = document.getElementById('select_gene_name').value;
+          if (gene_name == '') {
+            alert('Please enter the marker name.');
+            document.getElementById('loader_box').style.display = 'none';
+            location.reload();
+          } else {
+            dna_evidence_level(gene_name);
+            dna_biomarker_report(gene_name);
+            dna_fda_approval(gene_name);
+            dna_oncokb(gene_name);
+            document.getElementById('box_input').style.display = 'none';
+            document.getElementById('box_result').style.display = 'block';
+          }
+        }
+      </script>
+
+      <!-- marker name tips and oncokb tips -->
+      <script>
+        $(document).ready(function () {
+          $('[data-toggle="tooltip"]').tooltip();
+        });
+      </script>
+      <!-- js for add nav -->
+      <script>
+        $('#nav').load('side.html');
+      </script>
+      <!-- </body> -->
+      <!-- </html> -->
+    </div></body
+  ></html
+>

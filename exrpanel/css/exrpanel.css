@@ -1,0 +1,255 @@
+/* all theme */
+.EBD_title{
+    width: 100%;
+    /* max-height: 180px; */
+    top: 0px;
+    background-color: #ffffff;
+    /* height: 130px; */
+    z-index: 3000;}
+h2{
+    color: #317eac; 
+    font-size:5vh; 
+    margin-top: 15px; 
+    margin-bottom: 15px;}
+#EBD_nav{
+    position: static;
+    margin:0px;
+    font-size:20px;
+    padding: 0px;}
+.row_con{
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #D5D5D5; 
+    border-radius:4px;}
+footer{
+    font-size: 15px;}
+.button{
+    width: 100%;
+    margin-top: 5px;}
+.log_wrapper{
+    width: 100%;
+    max-height: 160px;
+    top: 0px;
+    background-color: #ffffff;
+    height: 130px;
+    z-index: 2999;}
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+    }
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+    }
+.search_zs{
+    padding-left: 0;
+    width: 100%;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aqua; */
+    display: flex;/*设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效*/
+    display: -webkit-flex; /* Safari */
+    flex-direction: row;/*容器内项目的排列方向(默认横向排列 row)*/
+    flex-wrap: nowrap;/*容器内项目换行方式*/
+    justify-content: left;/*项目在主轴上的对齐方式*/
+    align-items: left;/*项目在交叉轴上如何对齐*/
+    align-content: left;/*定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用*/}
+.button1 {
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    padding: 6px 0px;
+    font-size: 20px;
+    text-align: center;
+    background-color: #317eac;
+    color: #ffffff;
+    border: 2px solid #317eac;
+    border-radius:5px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;}
+.button1:hover {
+    background-color: white;
+    color: #000000;}
+
+/* index.html */
+
+
+/* a1.browse_EBD.html */
+
+.head_title{
+  background-color: grey;
+  padding: 5px 10px;
+  font-size: large;
+  color: #ffffff;
+  border-radius:4px;}
+
+
+.select_box{
+    width: 60%; 
+    height: 300px;
+    margin: 0 auto;}
+.select_font{
+    margin:0 auto;
+    margin-left: 0px; 
+    text-align:left;}
+.sample_stat_img{
+    padding: 20px;
+    padding-top: 50px; 
+    width: 70%; 
+    margin: auto;}
+
+/* a1.browse_EBD_result */
+.current_setting p{
+    background-color: grey;
+    padding: 5px 10px;
+    font-size: large;
+    color: #ffffff;
+    border-radius:5px;
+}
+
+.current_setting p div{
+    background-color: grey;
+    padding: 5px 10px;
+    font-size: large;
+    color: #ffffff;
+}
+
+.row .show{
+    float: left;
+    padding-right: 4px;
+    margin-top: 8px;
+}
+
+.row .search1{
+    float: left;
+}
+
+.row .entries{
+    float: left;
+    padding-left: 4px;
+    margin-top: 8px;
+}
+
+.row .search2{
+    float: right;
+    padding-right: 4px;
+    margin-top: 8px;
+}
+
+.row input{
+    float: right;
+    width: 20%;
+}
+
+.a1_result_table table{
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+}
+
+
+/* a2.search_RNA_result */
+.RNA_informatin{
+    float: left;
+    width: 50%;
+}
+.RNA_information_content{
+    /* width: 50%; */
+    float: left;
+}
+.Lookup_this_gene_in{
+    float: left;
+    width: 50%;
+    text-align: left; 
+    height:100px; 
+    line-height:50px; 
+}
+.Lookup_this_gene_in h3{
+    padding: 5px;
+}
+
+.Lookup_this_gene_in .image{
+    float: left;
+    padding: 5px;
+
+    /* width: 10%; */
+}
+.Lookup_this_gene_in .image img{
+    display: inline-block; 
+    vertical-align: middle;
+}
+.Expression_information{
+    width: 100%;
+}
+
+
+
+
+/* exrpanel common */
+.row{
+    margin-right: 0px;
+    margin-left: 0px;}
+.borderdiv{
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+    padding: 15px;
+    margin: 10px 0px;}
+.button{
+    width: 100%;
+    margin-top: 5px;}
+.btn-primary{
+    border-color: #3d7eb5;
+    background-image:linear-gradient(to bottom,#3d7eb5,#0b3e69);}
+.btn-success{
+    border-color: #5cb75c;
+    background-image:linear-gradient(to bottom,#5cb75c,#0e960e);}
+.btn-info{
+    border-color: #69bbd4;
+    background-image:linear-gradient(to bottom,#69bbd4,#2f7b92);}
+.btn-warning{
+    border-color: #e8ae5c;
+    background-image:linear-gradient(to bottom,#e8ae5c,#b77a25);}
+.maringtop{
+    margin-top:5px;}
+.textarea{
+    width: 35vh;}
+.log_wrapper{
+    width: 100%;
+    max-height: 160px;
+    top: 0px;
+    background-color: #ffffff;
+    height: 130px;
+    z-index: 2999;}
+.row_con{
+    padding: 10px;
+    margin: 10px 0;}
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    border-bottom: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;}
+
+/* exrpanel index.html */
+
+/* exrpanel a1.server.html */
+#myProgress {
+    width: 100%;
+    background-color: #ddd;}
+#myBar {
+    width: 0%;
+    height: 30px;
+    background-color: #4CAF50;}
+
+/* exrpanel a2.user.html */
+
+    
+
+    

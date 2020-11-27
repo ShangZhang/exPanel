@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="exMarker-evaluate exRNA biomarker for liquid biopsy" />
+    <meta name="author" content="shang_zhang@foxmail.com" />
+
+    <title class="page-header">exPanel - Evaluate and Optimize Panels for Liquid Biopsy </title>
+    <link rel="icon" href="./exmarker/img/exmarker_icon_red.svg" sizes="32x32" />
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.css" rel="stylesheet" />
+
+    <!-- ExMarker styles -->
+    <link rel="stylesheet" href="./exmarker/css/exmarker.css" />
+  </head>
+
+  <body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+      <div id="nav"></div>
+
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+          <!-- Topbar -->
+          <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <!-- Sidebar Toggle (Topbar) -->
+            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle">
+              <i class="fa fa-bars"></i>
+            </button>
+
+            <div>
+              <!-- text-capitalize  -->
+              <h1 class="h3 text-gray-900 alert-link interactive_title">Evaluate and Optimize Panels for Liquid Biopsy</h1>
+            </div>
+          </nav>
+          <!-- End of Topbar -->
+
+          <!-- Begin Page Content -->
+          <div class="container-fluid">
+            <!-- Content Row -->
+            <div class="row">
+              <!-- Cell-free DNA Example -->
+              <!-- <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Cell-free</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">DNA</div>
+                      </div>
+                      <div class="col-auto">
+                        <img class="img-responsive" src="./exmarker/img/index_dna_icon2.png" alt="DNA img" style="width:66px;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+
+              <!-- Circulating RNA Example -->
+              <!-- <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-info shadow h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Circulating</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">RNA</div>
+                      </div>
+                      <div class="col-auto">
+                        <img class="img-responsive" src="./exmarker/img/index_rna_icon2.png" alt="RNA img" style="width:66px;" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+
+              <!-- Circulating protein Example -->
+              <!-- <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Circulating</div>
+                        <div class="row no-gutters align-items-center">
+                          <div class="col-auto">
+                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">Protein</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-auto">
+                        <img class="img-responsive" src="./exmarker/img/index_protein_icon.png" alt="Protein img" style="width:66px;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+
+              <!-- Pending Requests Card Example -->
+              <!-- <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-danger shadow h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Circulating</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">Metabolite</div>
+                      </div>
+                      <div class="col-auto">
+                        <img class="img-responsive" src="./exmarker/img/index_metabolite_icon.png" alt="Metabolite img" style="width:66px;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+
+            <!-- Content Row -->
+            <div class="row">
+              <!--level classification Illustrations -->
+              <div id="level__system" class="col-xl-4 col-lg-5">
+                <div class="card shadow mb-4" style="display: none">
+                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary text-capitalize">Level of evidence classification system</h6>
+                  </div>
+                  <div class="card-body">
+                    <div class="text-center">
+                      <img class="img-responsive img-fluid px-3 px-sm-4 mt-3 mb-4" src="./exmarker/img/classification_system6.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Pie Chart -->
+                <div class="card shadow mb-4">
+                  <!-- Card Header - Dropdown -->
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary text-capitalize">Sources (demo)</h6>
+                  </div>
+                  <!-- Card Body -->
+                  <div class="card-body">
+                    <div class="chart-pie pt-4 pb-2">
+                      <canvas id="myPieChart"></canvas>
+                    </div>
+                    <div class="mt-4 text-center small">
+                      <span class="mr-2"> <i class="fas fa-circle text-primary"></i> DNA </span>
+                      <span class="mr-2"> <i class="fas fa-circle text-success"></i> RNA </span>
+                      <span class="mr-2"> <i class="fas fa-circle text-info"></i> Protein </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Summary of the biomarkers Chart -->
+              <div class="col-xl-8 col-lg-7">
+                <div class="card shadow mb-4">
+                  <!-- Card Header - Dropdown -->
+                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary text-capitalize">Summary of the biomarkers across evidence levels in exPanel</h6>
+                  </div>
+                  <!-- Card Body -->
+                  <div class="card-body">
+                    <div class="chart-area">
+                      <canvas id="biomarkers_across_evidence_levels" class="col-md-12" width="100%"></canvas>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Project Card Example -->
+                <div class="card shadow mb-4" style="display: none">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary text-capitalize">Project progress (demo)</h6>
+                  </div>
+                  <div class="card-body">
+                    <h4 class="small font-weight-bold">Evaluation Module <span class="float-right">20%</span></h4>
+                    <div class="progress mb-4">
+                      <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <h4 class="small font-weight-bold">Search Module <span class="float-right">40%</span></h4>
+                    <div class="progress mb-4">
+                      <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <h4 class="small font-weight-bold">Browse Module <span class="float-right">60%</span></h4>
+                    <div class="progress mb-4">
+                      <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <h4 class="small font-weight-bold">Server Construction <span class="float-right">80%</span></h4>
+                    <div class="progress mb-4">
+                      <div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <h4 class="small font-weight-bold">Database Construction <span class="float-right">Complete!</span></h4>
+                    <div class="progress">
+                      <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Content Row -->
+            <div class="row">
+              <!-- Content Column -->
+              <div class="col-lg-7 mb-4">
+                <div class="card shadow mb-4">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary text-capitalize">exPanel introduction</h6>
+                  </div>
+                  <div class="card-body text-justify">
+                    <p>
+                      <strong>exPanel</strong> starts from a normalized data matrix of gene expression. Users could start the analysis with server's matrix or their customized data. exPanel web service consists of four main modules: RNA evaluation, panel performance, PCA and marker selection.
+                      Meanwhile, the panel markers’ basic information and related research articles are also provided for the users.
+                    </p>
+
+                    <p> Using the logistic regression algorithm optimized by Newton's method written in JavaScript, the exPanel makes a tradeoff between flexibility and interpretability. This design yields a significant performance increase at a lower cost compared to traditional architecture. </p>
+
+                    <p>
+                      Meanwhile, exPanel contains a large number of biomarkers for liquid biopsy across
+                      <b> four molecular types, including DNA, RNA, protein, and metabolite</b>. We manually curated
+                      <b> 72 FDA-approved clinical biomarkers</b>
+                      from the official website, and
+                      <b> 1232 preclinical biomarkers from 745 research articles</b>. Additionally, a large cohort of
+                      <b> 4023 RNA-seq samples spanning seven specimen types </b>
+                      was collected in exPanel, and approximately
+                      <b> 45,000 RNA biomarker candidates </b>
+                      were identified from these public high-throughput sequencing data in the field of liquid biopsy.
+                    </p>
+
+                    <p> Please do not hesitate to contact us if you have any questions about the exPanel. You can email to us: <a href="mailto:server_lulab@163.com">exrpanel_lulab@163.com</a>. Your feedback is very important to us! </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-5 mb-4">
+                <!-- Approach -->
+                <div class="card shadow mb-4">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary text-capitalize">News</h6>
+                  </div>
+                  <div class="card-body text-justify">
+                    <p><b>exPanel released in June 2020</b></p>
+                    <ul>
+                      <li> Expanded to <b>31 types of human diseases</b>, including cancers, precancerous lesions, cardiovascular diseases, and so on. </li>
+                      <li> Manually curated about <b>1300 biomarkers</b> across four molecular types, including <b>DNA, RNA, protein, and metabolite</b>. </li>
+                      <li> Developed a <b>level of evidence classification system</b>. </li>
+                      <li> Identified <b>45,000 RNA biomarker candidates</b> from published RNA-seq data of 4023 clinical samples spanning 7 specimen types. </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright &copy; <a target="_blank" href="http://bioinformatics.life.tsinghua.edu.cn">Lu Lab @ Tsinghua University</a> 2020 All rights reserved</span>
+            </div>
+          </div>
+          <!-- Start of WebFreeCounter Code -->
+          <center><img src="https://www.webfreecounter.com/hit.php?id=gueaqanf&nd=6&style=71" style="padding-top: 1rem" border="0" alt="Web Counter" /></center>
+          <!-- End of WebFreeCounter Code -->
+        </footer>
+        <!-- End of Footer -->
+      </div>
+      <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="./exmarker/js/chart_biomarkers_across_evidence_levels.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="./exmarker/js/chart-demo.js"></script>
+
+    <!-- js for add nav -->
+    <script>
+      $('#nav').load('side.html');
+    </script>
+  </body>
+</html>
